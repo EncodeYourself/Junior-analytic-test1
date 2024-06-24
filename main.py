@@ -62,11 +62,13 @@ print(f'В октябре больше всего следующего типа 
 #%%
 #Задание 5
 
-may = df.loc[(df['document'] == 'оригинал') & (df['month'] == 5) & ~(df['receiving_date'].isnull())]
-june_doc_num = len(may.loc[may['receiving_date'].dt.month == 6])
+june_doc = df.loc[(df['document'] == 'оригинал') & 
+    (df['month'] == 5) &
+    (df['receiving_date'].dt.month == 6)]
+
 
 print('Задание 5')
-print(f'Кол-во майских оригиналов, полученных в июне: {june_doc_num} \n')
+print(f'Кол-во майских оригиналов, полученных в июне: {len(june_doc)} \n')
 #%%
 #Бонусное задание
 
