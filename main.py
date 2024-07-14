@@ -33,6 +33,7 @@ june_total = df.loc[(df['month'] == 7) & ~(df['status'] == 'ПРОСРОЧЕНО
 print('Задание 1')
 print(f'Общая выручка за июль по сделкам, приход средств которых не просрочено: {round(june_total, 2)} \n')  
 
+del june_total
 #%%
 #Задание 2
 
@@ -42,6 +43,7 @@ revenue = df.loc[~(df['status'] == 'ПРОСРОЧЕНО')].groupby('month')['su
 revenue.plot(kind='line', title='Задание 2, общая выручка по месяцам', xlabel='Месяц', ylabel='Сумма (в тыс.)')
 plt.show()
 
+del revenue
 #%%
 #Задание 3
 
@@ -50,6 +52,7 @@ revenue_by_man = df.loc[~(df['status'] == 'ПРОСРОЧЕНО') & (df['month']
 print('Задание 3')
 print(f'В сентябре больше всего привлёк средств менеджер {revenue_by_man.index[0]}, сумма: {float(revenue_by_man.iloc[0])} \n')
 
+del revenue_by_man
 #%%
 #Задание 4
 
@@ -59,6 +62,8 @@ print('Задание 4')
 print('Кол-во текущих и новых сделок в октябре:')
 print(october)
 print(f'В октябре больше всего следующего типа сделок: {october.index[0]}, кол-во: {int(october.iloc[0])} \n')
+
+del october
 #%%
 #Задание 5
 
@@ -69,6 +74,8 @@ june_doc = df.loc[(df['document'] == 'оригинал') &
 
 print('Задание 5')
 print(f'Кол-во майских оригиналов, полученных в июне: {len(june_doc)} \n')
+
+del june_doc
 #%%
 #Бонусное задание
 
